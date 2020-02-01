@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Contact from "./components/Contact.js";
+
+const users = [
+  {
+    name: "Brand Gibson",
+    picture: "https://randomuser.me/api/portraits/thumb/men/75.jpg",
+    status: true
+  },
+  {
+    name: "Laurie Campbell",
+    picture: "https://randomuser.me/api/portraits/thumb/women/18.jpg",
+    status: false
+  },
+  {
+    name: "Yasemin Duygulu",
+    picture: "https://randomuser.me/api/portraits/thumb/women/70.jpg",
+    status: true
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.map(user => (
+        <Contact name={user.name} picture={user.picture} status={user.status} />
+      ))}
     </div>
   );
 }
